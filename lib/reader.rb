@@ -12,6 +12,12 @@ class Reader
       opener.map {|row| Violation.new(row)}
     end
 
+    def count
+      loader.count
+    end
+
+
+
 
 end
 reader = Reader.new

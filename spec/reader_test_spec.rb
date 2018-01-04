@@ -5,5 +5,6 @@ RSpec.describe Reader do
     expect(reader.opener.class).to be CSV
     expect(reader.loader.class).to be Array
     expect(reader.loader.first.class).to be Violation
+    expect(reader.count).to eq 545
   end
 end
