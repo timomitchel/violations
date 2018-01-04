@@ -20,6 +20,11 @@ class Reader
       loader.sort_by {|violation| violation.violation_date}
     end
 
+    def violation_type
+      x = loader.sort_by {|violation| violation.violation_type}
+      binding.pry
+    end
+
 
 
 
