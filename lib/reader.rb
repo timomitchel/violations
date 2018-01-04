@@ -16,6 +16,10 @@ class Reader
       loader.count
     end
 
+    def earliest_violation
+      loader.sort_by {|violation| violation.violation_date}
+    end
+
 
 
 
