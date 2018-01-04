@@ -31,12 +31,26 @@ class Reader
       end
     end
 
+    def earliest_date_by_violation_type
+      violation_type.reduce(Hash.new) do |result, violation|
+        result[violation.violation_type] = violation.violation_date
+        result
+      end
+    end
+
+      def earliest_date_by_violation
+        violation_type.reduce(Hash.new) do |result, violation|
+        result[violation.violation_type] = violation_type.sort_by {|violation| violation.violation_date}
+        result
+      end
+    end
+
 
 
 
 end
 reader = Reader.new
 puts reader.count_by_violation_type
-
+puts reader.earliest_date_by_violation_type
 
 
