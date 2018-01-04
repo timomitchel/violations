@@ -8,6 +8,7 @@ RSpec.describe Reader do
     expect(reader.count).to eq 545
 
     expect(reader.earliest_violation[0].violation_date).to eq "2012-01-03 00:00:00"
-    expect(reader.violation_type).to eq 0
+    expect(reader.count_by_violation_type.class).to eq Hash
+
   end
 end

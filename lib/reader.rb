@@ -21,8 +21,14 @@ class Reader
     end
 
     def violation_type
-      x = loader.sort_by {|violation| violation.violation_type}
-      binding.pry
+      loader.sort_by {|violation| violation.violation_type}
+    end
+
+    def count_by_violation_type
+      violation_type.reduce(Hash.new(0)) do |result, violation|
+        result[violation.violation_type] += 1
+        result
+      end
     end
 
 
@@ -30,6 +36,7 @@ class Reader
 
 end
 reader = Reader.new
-reader.loader
+puts reader.count_by_violation_type
+
 
 
